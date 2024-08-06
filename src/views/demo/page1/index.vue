@@ -220,11 +220,6 @@ export default {
   border-color: #43ccd1;
 }
 
-/* .preview-image {
-  margin-top: 10px;
-  width: 100px;
-  height: 100px;
-} */
 
 .size-inputs {
   display: flex;
@@ -239,12 +234,6 @@ export default {
 .image-section {
   padding: 10px;
 }
-
-/* .generated-image {
-  margin: 10px;
-  width: 100px;
-  height: 100px;
-} */
 
 .image-list {
   display: flex;
