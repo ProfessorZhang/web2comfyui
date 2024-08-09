@@ -5,3 +5,5 @@
 ## 预览
 
 这是一个基于 D2Admin 前端的程序，可进行更改并调用 comfyui 生成图像，目前仍在努力学习和开发中
+
+![alt text](image-1.png)
