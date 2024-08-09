@@ -72,6 +72,7 @@
           <el-form-item>
             <el-button
               type="primary"
+              class="custom-button"
               @click="generateImage"
               :loading="loading"
               :disabled="isButtonDisabled"
@@ -195,6 +196,15 @@ export default {
 .style-options, .num-options, .size-options {
   display: flex;
   flex-wrap: wrap;
+}
+
+.custom-button {
+  background-color: #43ccd1 !important;
+  border-color: #43ccd1 !important;
+}
+
+::v-deep .el-switch__label--left.is-active {
+  color: red;
 }
 
 .option-button {
