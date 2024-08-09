@@ -1,4 +1,4 @@
-<template>
+<!-- <template> -->
   <!-- <div class="d2-page-cover">
     <div class="d2-page-cover__logo">
       <slot/>
@@ -14,7 +14,7 @@
         alt="Fork me on GitHub">
     </a>
   </div> -->
-</template>
+<!-- </template> -->
 
 <!-- <style lang="scss" scoped>
 .d2-page-cover {

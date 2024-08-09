@@ -1,5 +1,5 @@
-<template>
-  <!-- <div>
+<!-- <template>
+  <div>
     <el-button type="primary" @click="dialogVisible = true" plain round>
       <d2-icon name="question-circle-o" class="d2-mr-5"/>
       需要帮助吗
@@ -46,20 +46,20 @@
         </el-row>
       </div>
     </el-dialog>
-  </div> -->
+  </div>
 </template>
 
 <script>
-// export default {
-//   data () {
-//     return {
-//       dialogVisible: false
-//     }
-//   }
-// }
+export default {
+  data () {
+    return {
+      dialogVisible: false
+    }
+  }
+}
 </script>
 
-<!-- <style lang="scss" scoped>
+<style lang="scss" scoped>
 .d2-help--qr-info {
   background-color: #f4f4f5;
   color: #909399;
