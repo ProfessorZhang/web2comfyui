@@ -1,6 +1,6 @@
 在[D2Admin](https://github.com/d2-projects/d2-admin)基础上做的修改
 
-**中文** | [English](https://github.com/)
+**中文** | [English](https://github.com/ProfessorZhang/web2comfyui/blob/main/README.md)
 
 ## 预览
 
