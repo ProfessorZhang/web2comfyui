@@ -204,7 +204,7 @@ export default {
 }
 
 ::v-deep .el-switch__label--left.is-active {
-  color: red;
+  color: rgb(0, 0, 0);
 }
 
 .option-button {
