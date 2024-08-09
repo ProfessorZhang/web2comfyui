@@ -1,0 +1,149 @@
+{
+    "3": {
+      "inputs": {
+        "seed": 1078622725740560,
+        "steps": 20,
+        "cfg": 8,
+        "sampler_name": "euler",
+        "scheduler": "normal",
+        "denoise": 1,
+        "model": [
+          "4",
+          0
+        ],
+        "positive": [
+          "15",
+          0
+        ],
+        "negative": [
+          "61",
+          0
+        ],
+        "latent_image": [
+          "5",
+          0
+        ]
+      },
+      "class_type": "KSampler",
+      "_meta": {
+        "title": "K采样器"
+      }
+    },
+    "4": {
+      "inputs": {
+        "ckpt_name": "sd3_medium_incl_clips_t5xxlfp16.safetensors"
+      },
+      "class_type": "CheckpointLoaderSimple",
+      "_meta": {
+        "title": "Checkpoint加载器(简易)"
+      }
+    },
+    "5": {
+      "inputs": {
+        "width": 512,
+        "height": 512,
+        "batch_size": 1
+      },
+      "class_type": "EmptyLatentImage",
+      "_meta": {
+        "title": "空Latent"
+      }
+    },
+    "8": {
+      "inputs": {
+        "samples": [
+          "3",
+          0
+        ],
+        "vae": [
+          "4",
+          2
+        ]
+      },
+      "class_type": "VAEDecode",
+      "_meta": {
+        "title": "VAE解码"
+      }
+    },
+    "9": {
+      "inputs": {
+        "filename_prefix": "ComfyUI",
+        "images": [
+          "8",
+          0
+        ]
+      },
+      "class_type": "SaveImage",
+      "_meta": {
+        "title": "保存图像"
+      }
+    },
+    "15": {
+      "inputs": {
+        "from_translate": "chinese simplified",
+        "to_translate": "english",
+        "add_proxies": false,
+        "proxies": "",
+        "auth_data": "",
+        "service": "MyMemoryTranslator [free]",
+        "text": "",
+        "Show proxy": "proxy_hide",
+        "Show authorization": "authorization_hide",
+        "clip": [
+          "4",
+          1
+        ]
+      },
+      "class_type": "DeepTranslatorCLIPTextEncodeNode",
+      "_meta": {
+        "title": "CLIP文本编码器(翻译高级)"
+      }
+    },
+    "17": {
+      "inputs": {
+        "text": [
+          "15",
+          1
+        ],
+        "text2": ""
+      },
+      "class_type": "ShowText|pysssss",
+      "_meta": {
+        "title": "展示文本"
+      }
+    },
+    "61": {
+      "inputs": {
+        "from_translate": "chinese simplified",
+        "to_translate": "english",
+        "add_proxies": false,
+        "proxies": "",
+        "auth_data": "",
+        "service": "MyMemoryTranslator [free]",
+        "text": "",
+        "Show proxy": "proxy_hide",
+        "Show authorization": "authorization_hide",
+        "clip": [
+          "4",
+          1
+        ]
+      },
+      "class_type": "DeepTranslatorCLIPTextEncodeNode",
+      "_meta": {
+        "title": "CLIP文本编码器(翻译高级)"
+      }
+    },
+    "62": {
+      "inputs": {
+        "text": [
+          "61",
+          1
+        ],
+        "text2": ""
+      },
+      "class_type": "ShowText|pysssss",
+      "_meta": {
+        "title": "展示文本"
+      }
+    }
+  }
