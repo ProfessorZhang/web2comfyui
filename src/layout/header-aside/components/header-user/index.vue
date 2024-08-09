@@ -2,11 +2,11 @@
   <el-dropdown size="small" class="d2-mr">
     <span class="btn-text">{{info.name ? `${info.name}` : '未登录'}}</span>
     <el-dropdown-menu slot="dropdown">
-      <el-dropdown-item @click.native="logOff">
+      <el-dropdown-item @click.native="logOff('logout')">
         <d2-icon name="sign-out" class="d2-mr-5"/>
         注销
       </el-dropdown-item>
-      <el-dropdown-item @click.native="logOff">
+      <el-dropdown-item @click.native="logOff('login')">
         <d2-icon name="sign-in" class="d2-mr-5"/>
         登录
       </el-dropdown-item>
@@ -29,10 +29,19 @@ export default {
     /**
      * @description 登出
      */
-    logOff () {
-      this.logout({
-        confirm: true
-      })
+    logOff (action) {
+      if (action === 'logout') {
+        this.logout({
+          confirm: true
+        })
+      } else if (action === 'login') {
+        this.$router.push({ name: 'login' }) // 跳转到登录页面
+      }
+    // logOff () {
+    //   this.logout({
+    //     confirm: true
+    //   })
+    // }
     }
   }
 }
