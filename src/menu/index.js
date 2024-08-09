@@ -21,9 +21,9 @@ export const menuHeader = supplementPath([
     title: 'AI图像处理',
     icon: 'image',
     children: [
-      { path: '/page1', title: '文生图',icon: 'text' },
-      { path: '/page2', title: '高清修复',icon: 'text' },
-      { path: '/page3', title: '图片放大',icon: 'text' }
+      { path: '/page1', title: '文生图', icon: 'text' },
+      { path: '/page2', title: '高清修复', icon: 'text' },
+      { path: '/page3', title: '图片放大', icon: 'text' }
     ]
   }
 ])
@@ -34,9 +34,9 @@ export const menuAside = supplementPath([
     title: 'AI图像处理',
     icon: 'image',
     children: [
-      { path: '/page1', title: '文生图',icon: 'text' },
-      { path: '/page2', title: '高清修复',icon: 'text' },
-      { path: '/page3', title: '图片放大',icon: 'text' }
+      { path: '/page1', title: '文生图', icon: 'text' },
+      { path: '/page2', title: '高清修复', icon: 'text' },
+      { path: '/page3', title: '图片放大', icon: 'text' }
     ]
   }
 ])

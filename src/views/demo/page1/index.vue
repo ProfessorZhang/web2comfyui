@@ -6,25 +6,25 @@
         <div class="style-section">
           <h3>图片风格</h3>
           <div class="style-options">
-            <button 
-              class="option-button" 
-              :class="{ selected: selectedStyle === 'cartoon' }" 
+            <button
+              class="option-button"
+              :class="{ selected: selectedStyle === 'cartoon' }"
               @click="selectStyle('cartoon')">卡通</button>
-            <button 
-              class="option-button" 
-              :class="{ selected: selectedStyle === 'anime' }" 
+            <button
+              class="option-button"
+              :class="{ selected: selectedStyle === 'anime' }"
               @click="selectStyle('anime')">动漫</button>
-            <button 
-              class="option-button" 
-              :class="{ selected: selectedStyle === 'realistic' }" 
+            <button
+              class="option-button"
+              :class="{ selected: selectedStyle === 'realistic' }"
               @click="selectStyle('realistic')">写实</button>
-            <button 
-              class="option-button" 
-              :class="{ selected: selectedStyle === 'architecture' }" 
+            <button
+              class="option-button"
+              :class="{ selected: selectedStyle === 'architecture' }"
               @click="selectStyle('architecture')">建筑</button>
-            <button 
-              class="option-button" 
-              :class="{ selected: selectedStyle === 'twozone' }" 
+            <button
+              class="option-button"
+              :class="{ selected: selectedStyle === 'twozone' }"
               @click="selectStyle('twozone')">二次元</button>
           </div>
           <img v-if="selectedStyleImage" :src="selectedStyleImage" class="preview-image">
@@ -32,21 +32,21 @@
         <div class="num-section">
           <h3>图片数量</h3>
           <div class="num-options">
-            <button 
-              class="option-button" 
-              :class="{ selected: selectedNum === 1 }" 
+            <button
+              class="option-button"
+              :class="{ selected: selectedNum === 1 }"
               @click="selectNum(1)">1</button>
-            <button 
-              class="option-button" 
-              :class="{ selected: selectedNum === 2 }" 
+            <button
+              class="option-button"
+              :class="{ selected: selectedNum === 2 }"
               @click="selectNum(2)">2</button>
-            <button 
-              class="option-button" 
-              :class="{ selected: selectedNum === 3 }" 
+            <button
+              class="option-button"
+              :class="{ selected: selectedNum === 3 }"
               @click="selectNum(3)">3</button>
-            <button 
-              class="option-button" 
-              :class="{ selected: selectedNum === 4 }" 
+            <button
+              class="option-button"
+              :class="{ selected: selectedNum === 4 }"
               @click="selectNum(4)">4</button>
           </div>
         </div>
@@ -61,18 +61,18 @@
       <el-form label-width="100px">
         <div class="main-content">
           <el-form-item label="提示词">
-            <el-input v-model="prompt" placeholder="如:一个漂亮的女孩" style="width: 400px;"></el-input>
+            <el-input v-model="prompt" type="textarea" placeholder="如:一个漂亮的女孩" style="width: 400px;" :rows= "3"></el-input>
           </el-form-item>
           <el-form-item label="反向提示词">
             <el-switch v-model="showNegativePrompt" active-text="开启" inactive-text="关闭"></el-switch>
           </el-form-item>
           <el-form-item v-if="showNegativePrompt" label="反向提示词">
-            <el-input v-model="negativePrompt" placeholder="如:畸形,多人"></el-input>
+            <el-input v-model="negativePrompt" type="textarea" placeholder="如:畸形,多人" :rows= "3"></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button 
-              type="primary" 
-              @click="generateImage" 
+            <el-button
+              type="primary"
+              @click="generateImage"
               :loading="loading"
               :disabled="isButtonDisabled"
             >开始绘制</el-button>
@@ -81,11 +81,11 @@
         <div class="image-section" v-if="!loading &&generatedImages.length">
         <h3>生成的图片</h3>
         <div class="image-list">
-          <img 
-            v-for="(img, index) in generatedImages" 
-            :src="img" 
-            :key="index" 
-            class="generated-image" 
+          <img
+            v-for="(img, index) in generatedImages"
+            :src="img"
+            :key="index"
+            class="generated-image"
             @click="openPreview(img)"
           >
         </div>
@@ -94,7 +94,6 @@
         </div>
       </div>
       </el-form>
-      
     </div>
     <div v-if="loading" class="loading-overlay">
       <div class="spinner"></div>
@@ -104,10 +103,10 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from 'axios'
 
 export default {
-  data() {
+  data () {
     return {
       showNegativePrompt: false,
       prompt: '',
@@ -123,28 +122,28 @@ export default {
         anime: 'path_to_anime_image',
         realistic: 'path_to_realistic_image',
         architecture: 'path_to_architecture_image',
-        twozone: 'path_to_2d_image',
+        twozone: 'path_to_2d_image'
       }
-    };
+    }
   },
   computed: {
-    isButtonDisabled() {
+    isButtonDisabled () {
       // The button is disabled if prompt is empty or selectedNum is null
-      return !this.prompt || this.selectedNum === null;
+      return !this.prompt || this.selectedNum === null
     },
-    selectedStyleImage() {
-      return this.styleImages[this.selectedStyle];
+    selectedStyleImage () {
+      return this.styleImages[this.selectedStyle]
     }
   },
   methods: {
-    selectStyle(style) {
-      this.selectedStyle = style;
+    selectStyle (style) {
+      this.selectedStyle = style
     },
-    selectNum(num) {
-      this.selectedNum = num;
+    selectNum (num) {
+      this.selectedNum = num
     },
-    async generateImage() {
-      this.loading = true;
+    async generateImage () {
+      this.loading = true
       const params = {
         positive_prompt: this.prompt,
         negative_prompt: this.negativePrompt,
@@ -152,30 +151,30 @@ export default {
         batch_size: this.selectedNum,
         width: this.width,
         height: this.height
-      };
+      }
 
-    try {
-    const response = await axios.post('http://localhost:5001/txt2img', params);
-    console.log('API Response:', response.data); // 检查数据结构
-    if (Array.isArray(response.data)) {
-      this.generatedImages = response.data;
-    } else {
-      console.error('Invalid data format from API:', response.data);
-    }
-  } catch (error) {
-    console.error('Error generating image:', error);
-  } finally {
-    this.loading = false;
-  }
+      try {
+        const response = await axios.post('http://localhost:5001/txt2img', params)
+        console.log('API Response:', response.data) // 检查数据结构
+        if (Array.isArray(response.data)) {
+          this.generatedImages = response.data
+        } else {
+          console.error('Invalid data format from API:', response.data)
+        }
+      } catch (error) {
+        console.error('Error generating image:', error)
+      } finally {
+        this.loading = false
+      }
     },
-    openPreview(image) {
-      this.previewImage = image;
+    openPreview (image) {
+      this.previewImage = image
     },
-    closePreview() {
-      this.previewImage = null;
+    closePreview () {
+      this.previewImage = null
     }
   }
-};
+}
 </script>
 
 <style scoped>
@@ -220,7 +219,6 @@ export default {
   border-color: #43ccd1;
 }
 
-
 .size-inputs {
   display: flex;
   align-items: center;
@@ -234,7 +232,6 @@ export default {
 .image-section {
   padding: 10px;
 }
-
 
 .image-list {
   display: flex;
@@ -304,6 +301,5 @@ export default {
     transform: rotate(360deg);
   }
 }
-
 
 </style>

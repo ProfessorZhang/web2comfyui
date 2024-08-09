@@ -17,7 +17,7 @@ const frameIn = [
         path: 'index',
         name: 'index',
         meta: {
-          auth: true
+          auth: false
         },
         component: _import('system/index')
       },
@@ -48,16 +48,6 @@ const frameIn = [
           auth: true
         },
         component: _import('demo/page3')
-      },
-      // 系统 前端日志
-      {
-        path: 'log',
-        name: 'log',
-        meta: {
-          title: '前端日志',
-          auth: true
-        },
-        component: _import('system/log')
       },
       // 刷新页面 必须保留
       {
