@@ -13,7 +13,7 @@ const util = {
  * @param {String} title 标题
  */
 util.title = function (titleText) {
-  const processTitle ='Autotech'
+  const processTitle = 'Autotech'
   window.document.title = `${processTitle}${titleText ? ` | ${titleText}` : ''}`
 }
 

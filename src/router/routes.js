@@ -35,7 +35,7 @@ const frameIn = [
         path: 'page2',
         name: 'page2',
         meta: {
-          title: '高清修复',
+          title: '图片转绘',
           auth: true
         },
         component: _import('demo/page2')

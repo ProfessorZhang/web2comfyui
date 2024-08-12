@@ -22,7 +22,7 @@ export const menuHeader = supplementPath([
     icon: 'image',
     children: [
       { path: '/page1', title: '文生图', icon: 'text' },
-      { path: '/page2', title: '高清修复', icon: 'text' },
+      { path: '/page2', title: '图片转绘', icon: 'text' },
       { path: '/page3', title: '图片放大', icon: 'text' }
     ]
   }
@@ -35,7 +35,7 @@ export const menuAside = supplementPath([
     icon: 'image',
     children: [
       { path: '/page1', title: '文生图', icon: 'text' },
-      { path: '/page2', title: '高清修复', icon: 'text' },
+      { path: '/page2', title: '图片转绘', icon: 'text' },
       { path: '/page3', title: '图片放大', icon: 'text' }
     ]
   }
