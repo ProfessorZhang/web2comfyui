@@ -9,19 +9,19 @@
             <button
               class="option-button"
               :class="{ selected: selectedStyle === 'cartoon' }"
-              @click="selectStyle('cartoon')">卡通</button>
+              @click="selectStyle('cartoon')">卡通动漫</button>
             <button
               class="option-button"
               :class="{ selected: selectedStyle === 'anime' }"
-              @click="selectStyle('anime')">动漫</button>
+              @click="selectStyle('anime')">景色建筑</button>
             <button
               class="option-button"
               :class="{ selected: selectedStyle === 'realistic' }"
-              @click="selectStyle('realistic')">写实</button>
+              @click="selectStyle('realistic')">现实主义</button>
             <button
               class="option-button"
               :class="{ selected: selectedStyle === 'architecture' }"
-              @click="selectStyle('architecture')">建筑</button>
+              @click="selectStyle('architecture')">宫崎骏动漫</button>
             <button
               class="option-button"
               :class="{ selected: selectedStyle === 'twozone' }"
